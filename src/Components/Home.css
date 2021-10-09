@@ -1,0 +1,32 @@
+.home-logout-btn
+{
+  height:11vh;
+  width:11vh;
+  position: fixed;
+  bottom: 3rem;
+  right: 3rem;
+
+  border-radius: 50%;
+  background-color: #636e72;
+  border:6px solid #b2bec3;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  color: whitesmoke;
+}
+.video-container
+{
+    height: 100vh;
+    width:100vw;
+    background-color:black;
+    overflow-y: auto;
+    scroll-snap-type:y mandatory;
+}
+input
+{
+ height: 4rem;
+ width:6rem;
+ position:fixed;
+ outline: none;
+ bottom: 7rem;
+ right:3rem
+}

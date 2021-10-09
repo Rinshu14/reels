@@ -3,6 +3,7 @@
 
 import firebase from "firebase/compat/app";//importing app module of firebase library in firebase named variable
 import config from "./config.json";
+import  "firebase/compat/storage";
 import "firebase/compat/auth";//importing auth module for authenticatication again it will get in firebase variable
 import "firebase/compat/firestore";//importing firstore module to use databse services again it will get in firebase variable 
 
@@ -18,7 +19,7 @@ import "firebase/compat/firestore";//importing firstore module to use databse se
     auth.signInWithPopup(provider);
     //it is a function of auth that provide signin with a popup with the way you provided provider
   }
-
+ export const storage=firebase.storage();
  
 
 

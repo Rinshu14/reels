@@ -5,7 +5,7 @@
 
 import { createContext, useEffect, useState } from "react"
 import {auth} from "./firebase"
-
+import {firestore} from "./firebase"
 export const authContext=createContext()
 let AuthProvider=(props)=>{
     
@@ -13,11 +13,24 @@ let AuthProvider=(props)=>{
  let [loading,setLoading]=useState(true);//it loading is a state that means either the user has started not login or logged on OR login and logon process is continue bas khatam ni hui h         
 
  useEffect(()=>{//it is use effect of 1 case that execute only once after first render at that time it get register and execute whenever event occurs either of login or log out
-    let unsub=auth.onAuthStateChanged((user)=>{//onAuthStateChange is a event listner that get fired whwnever a state cahnge of login or log out and if login 
+    let unsub=auth.onAuthStateChanged(async (user)=>{//onAuthStateChange is a event listner that get fired whwnever a state cahnge of login or log out and if login 
         if(user)//means user is not null which means user is logged in
         {
             
             let{displayName,email,uid,photoURL}=user;
+            
+            let docRef=firestore.collection("users").doc(uid);//fetching the document with uid which is unique id given by fire base to the loggeg in user
+            let documentSnapshot=await docRef.get();//fetching snapshot of document
+            if (!documentSnapshot.exists)//checking if the document exists thst means we have a document with user details so do nothing if not exists than this document is fake we have to convert it to real by adding data to it
+            {
+                docRef.set({//set property adds data to fake document of user 
+                  displayName,
+                  email,
+                  uid,
+                  photoURL  
+                })
+            }
+
             setUserDetails({displayName,email,uid,photoURL});
 
             
