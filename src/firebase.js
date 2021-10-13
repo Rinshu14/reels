@@ -9,7 +9,7 @@ import "firebase/compat/firestore";//importing firstore module to use databse se
 
 
 
-  firebase.initializeApp(config);//it makes connection with firebase of react project or integrate the react project with firebase
+  firebase.initializeApp(config);//it makes connection with firebase and react project or integrate the react project with firebase
    
   let provider=new firebase.auth.GoogleAuthProvider()//it tells what we are using for authentication  here GoogleAuthProvider tells we are using google account for authentication
   export const auth = firebase.auth();//creating the object of auth module to use its function that provides the services 
@@ -19,7 +19,7 @@ import "firebase/compat/firestore";//importing firstore module to use databse se
     auth.signInWithPopup(provider);
     //it is a function of auth that provide signin with a popup with the way you provided provider
   }
- export const storage=firebase.storage();
+ export const storage=firebase.storage();//exporting the object of firebase storage to use its functionality
  
 
 

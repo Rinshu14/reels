@@ -21,7 +21,7 @@
     overflow-y: auto;
     scroll-snap-type:y mandatory;
 }
-input
+.input-file
 {
  height: 4rem;
  width:6rem;

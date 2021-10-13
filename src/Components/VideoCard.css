@@ -46,7 +46,7 @@
     font-weight: 500;
    
     position: absolute;
-    bottom: 8rem;
+    bottom: 19rem;
     right: 1rem; 
     z-index:2;
     cursor: pointer; 
@@ -59,7 +59,7 @@
     font-weight: 500;
 
     position: absolute;
-    bottom: 6rem;
+    bottom: 17rem;
     right: 1rem;
     z-index:2; 
     cursor: pointer;
@@ -102,12 +102,15 @@
 {
     height: 10%;
     display: flex;
+  
 }
-.comment-form input
+.input-comment
 {
     width:80%;
-    border:none;
-    height: 100%;
+    
+    height:100%;
+
+   
 }
 .comment-form button
 {
